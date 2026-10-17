@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catatan Kuliah — Nabila Ramadhani Mujahidin (123140062)</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div class="wadah">
+
+    <!-- Kop halaman -->
+    <header class="kop">
+      <h1>Catatan Kuliah</h1>
+      <p class="nim">Nabila Ramadhani Mujahidin — 123140062</p>
+      <p class="jam" id="jam">--:--:--</p>
+    </header>
+
+    <!-- Bagian atas: formulir + info -->
+    <div class="baris-atas">
+
+      <!-- Formulir tambah / edit catatan -->
+      <section class="kartu">
+        <h2 id="judulForm">Tulis Catatan Baru</h2>
+        <form id="formCatatan">
+          <input type="hidden" id="idCatatan">
+          <label for="judulCatatan">Judul</label>
+          <input type="text" id="judulCatatan" placeholder="Contoh: Ringkasan Bab 4" required>
+          <label for="isiCatatan" class="mt-2">Isi Catatan</label>
+          <textarea id="isiCatatan" placeholder="Tulis isi catatan di sini..."></textarea>
+          <button type="submit" class="tombol tombol-utama">Simpan Catatan</button>
+          <button type="button" id="batalEdit" class="tombol tombol-batal">Batal Edit</button>
+        </form>
+      </section>
+
+      <!-- Kutipan harian (Promise .then) -->
+      <section class="kartu kartu-kutipan">
+        <div class="judul-kutipan">
+          <h2>Kutipan Hari Ini</h2>
+          <button id="tombolKutipan" class="tautan">Muat ulang</button>
+        </div>
+        <p id="teksKutipan" class="isi-kutipan">Memuat kutipan...</p>
+        <p id="penulisKutipan" class="penulis-kutipan"></p>
+      </section>
+
+    </div>
+
+    <!-- Daftar catatan -->
+    <section class="kartu kartu-daftar">
+      <div class="judul-daftar">
+        <h2>Catatan Saya</h2>
+        <span id="jumlahCatatan" class="hitung">0 catatan</span>
+      </div>
+      <div id="daftarCatatan" class="daftar-catatan"></div>
+    </section>
+
+    <footer class="kaki">Nabila Cantik</footer>
+
+  </div>
+
+  <script type="module" src="js/main.js"></script>
+
+</body>
+</html>

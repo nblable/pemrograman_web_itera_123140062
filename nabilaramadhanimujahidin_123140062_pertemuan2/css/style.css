@@ -1,0 +1,284 @@
+/* css/style.css — seluruh tampilan pakai CSS murni (tanpa framework), warna pink */
+
+:root {
+  --utama: #db2777;
+  --utama-tua: #be185d;
+  --garis: #fce7f3;
+  --latar: #fff5f9;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  background: var(--latar);
+  color: #1f2937;
+}
+
+.wadah {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem;
+}
+
+/* ===== Kop ===== */
+.kop {
+  background: linear-gradient(120deg, #db2777, #f472b6);
+  color: #fff;
+  border-radius: 1rem;
+  padding: 1.4rem 1.6rem;
+}
+
+.kop h1 {
+  margin: 0;
+  font-size: 1.4rem;
+}
+
+.kop .nim {
+  margin: 0.2rem 0 0;
+  font-size: 0.8rem;
+  opacity: 0.9;
+}
+
+.kop .jam {
+  display: inline-block;
+  margin-top: 0.7rem;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 999px;
+  padding: 0.2rem 0.8rem;
+  font-family: monospace;
+  font-size: 0.85rem;
+}
+
+/* ===== Baris atas (form + kutipan) ===== */
+.baris-atas {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+@media (min-width: 700px) {
+  .baris-atas {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+}
+
+/* ===== Kartu ===== */
+.kartu {
+  background: #fff;
+  border: 1px solid var(--garis);
+  border-radius: 1rem;
+  padding: 1.2rem;
+  box-shadow: 0 1px 3px rgba(157, 23, 93, 0.06);
+}
+
+.kartu h2 {
+  margin: 0 0 0.9rem;
+  font-size: 1rem;
+  color: #9d175d;
+}
+
+/* ===== Formulir ===== */
+label {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #4b5563;
+}
+
+.mt-2 {
+  margin-top: 0.7rem;
+}
+
+input[type="text"],
+textarea {
+  width: 100%;
+  margin-top: 0.25rem;
+  padding: 0.5rem 0.7rem;
+  border: 1px solid #fbcfe8;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  font-family: inherit;
+}
+
+input[type="text"]:focus,
+textarea:focus {
+  outline: 2px solid #f9a8d4;
+  border-color: transparent;
+}
+
+textarea {
+  min-height: 90px;
+  resize: vertical;
+}
+
+.tombol {
+  margin-top: 0.9rem;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.55rem 1.1rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.tombol-utama {
+  background: var(--utama);
+  color: #fff;
+}
+
+.tombol-utama:hover {
+  background: var(--utama-tua);
+}
+
+.tombol-batal {
+  background: var(--garis);
+  color: var(--utama-tua);
+  display: none;
+}
+
+.tombol-batal.tampil {
+  display: inline-block;
+}
+
+/* ===== Kutipan ===== */
+.kartu-kutipan {
+  background: #831843;
+  color: #fce7f3;
+  border-color: #831843;
+}
+
+.kartu-kutipan .judul-kutipan {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.kartu-kutipan h2 {
+  margin: 0;
+  color: #f9a8d4;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.tautan {
+  background: none;
+  border: none;
+  color: #f9a8d4;
+  font-size: 0.75rem;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.isi-kutipan {
+  font-style: italic;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin: 0.9rem 0 0;
+}
+
+.penulis-kutipan {
+  text-align: right;
+  font-size: 0.75rem;
+  color: #f9a8d4;
+  margin: 0.5rem 0 0;
+}
+
+/* ===== Daftar catatan ===== */
+.kartu-daftar {
+  margin-top: 1rem;
+}
+
+.judul-daftar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.9rem;
+}
+
+.judul-daftar h2 {
+  margin: 0;
+}
+
+.hitung {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--utama-tua);
+  background: var(--garis);
+  border-radius: 999px;
+  padding: 0.15rem 0.6rem;
+}
+
+.daftar-catatan {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 0.8rem;
+}
+
+.catatan {
+  border: 1px solid var(--garis);
+  border-top: 4px solid var(--utama);
+  border-radius: 0.7rem;
+  padding: 0.8rem;
+  background: #fff;
+}
+
+.catatan h3 {
+  margin: 0;
+  font-size: 0.92rem;
+}
+
+.catatan .isi-teks {
+  font-size: 0.8rem;
+  color: #4b5563;
+  margin: 0.4rem 0;
+  white-space: pre-wrap;
+}
+
+.catatan .waktu {
+  font-size: 0.7rem;
+  color: #9ca3af;
+}
+
+.catatan .aksi {
+  display: flex;
+  gap: 0.4rem;
+  margin-top: 0.6rem;
+}
+
+.tombol-kecil {
+  border: 1px solid #fbcfe8;
+  background: #fff;
+  border-radius: 0.4rem;
+  padding: 0.2rem 0.55rem;
+  font-size: 0.72rem;
+  cursor: pointer;
+  color: #6b7280;
+}
+
+.tombol-kecil:hover {
+  background: #fdf2f8;
+  color: var(--utama-tua);
+}
+
+.catatan-kosong {
+  grid-column: 1 / -1;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #9ca3af;
+  padding: 1.5rem 0;
+}
+
+/* ===== Kaki halaman ===== */
+.kaki {
+  text-align: center;
+  font-size: 0.72rem;
+  color: #9ca3af;
+  margin-top: 1.4rem;
+}
