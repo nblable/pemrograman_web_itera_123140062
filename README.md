@@ -39,7 +39,7 @@ Nabila_123140062_pertemuan5/
 |   |-- member.py
 |   |-- library.py
 |   |-- main.py
-|   `-- output.txt
+|   `-- screenshot.png
 |-- README.md
 `-- .gitignore
 ```
@@ -58,56 +58,7 @@ python main.py
 ```
 
 ### Screenshot Output
-Tangkapan layar terminal saat program dijalankan (fitur penambahan, pencarian,
-dan penampilan katalog) tersimpan pada berkas `tugas_perpustakaan/output.txt`.
+Screenshot terminal saat menjalankan `python main.py` (fitur penambahan item,
+penampilan katalog, pencarian item, peminjaman, dan perhitungan denda):
 
-Contoh output utama (`python main.py`):
-```
-Item 'Pemrograman Web dengan Python' berhasil ditambahkan ke perpustakaan.
-Item 'Struktur Data dan Algoritma' berhasil ditambahkan ke perpustakaan.
-Item 'InfoTeknologi' berhasil ditambahkan ke perpustakaan.
-Item 'Sains Populer' berhasil ditambahkan ke perpustakaan.
-Item dengan ID 'B001' sudah ada di koleksi.
-
-===== KATALOG PERPUSTAKAAN ITERA =====
-[B001] Pemrograman Web dengan Python (2024) - Tersedia
-   Buku: Pemrograman Web dengan Python | Pengarang: Ahmad Fadhil | ISBN: 978-1234567890 | Halaman: 320 | Tahun: 2024
-[B002] Struktur Data dan Algoritma (2023) - Tersedia
-   Buku: Struktur Data dan Algoritma | Pengarang: Siti Rahma | ISBN: 978-0987654321 | Halaman: 450 | Tahun: 2023
-[M001] InfoTeknologi (2025) - Tersedia
-   Majalah: InfoTeknologi | Edisi: Edisi 12 | Penerbit: ITERA Press | Tahun: 2025
-[M002] Sains Populer (2024) - Tersedia
-   Majalah: Sains Populer | Edisi: Edisi 5 | Penerbit: Sains Indonesia | Tahun: 2024
-
-Total item di perpustakaan: 4
-
---- Pencarian Item ---
-Ditemukan (by ID): Buku: Struktur Data dan Algoritma | Pengarang: Siti Rahma | ISBN: 978-0987654321 | Halaman: 450 | Tahun: 2023
-Hasil pencarian judul 'python':
- - [B001] Pemrograman Web dengan Python (2024) - Tersedia
-
---- Peminjaman ---
-Nabila Ramadhani Mujahidin berhasil meminjam: Pemrograman Web dengan Python
-Item 'Pemrograman Web dengan Python' sedang dipinjam, tidak bisa dipinjam lagi.
-Member[M001] Nabila Ramadhani Mujahidin (nabila@itera.ac.id) - Pinjam: 1 item
-Daftar pinjam member: ['B001']
-
---- Item yang Tersedia ---
-[B002] Struktur Data dan Algoritma (2023) - Tersedia
-[M001] InfoTeknologi (2025) - Tersedia
-[M002] Sains Populer (2024) - Tersedia
-
---- Pengembalian ---
-Nabila Ramadhani Mujahidin berhasil mengembalikan: Pemrograman Web dengan Python
-Member[M001] Nabila Ramadhani Mujahidin (nabila@itera.ac.id) - Pinjam: 0 item
-
---- Perhitungan Denda (Polymorphism) ---
-Pemrograman Web dengan Python: denda 5 hari = Rp 10,000
-Struktur Data dan Algoritma: denda 5 hari = Rp 10,000
-InfoTeknologi: denda 5 hari = Rp 5,000
-Total denda semua item (5 hari): Rp 30,000
-
---- Uji Property Setter ---
-Validasi email: Format email tidak valid!
-Email member sekarang: nabila.baru@itera.ac.id
-```
+![Screenshot Output Program](tugas_perpustakaan/screenshot.png)
