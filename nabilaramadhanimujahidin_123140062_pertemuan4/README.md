@@ -28,9 +28,9 @@ python main.py
 ## Screenshot Eksekusi
 
 <!-- Tambahkan screenshot hasil eksekusi program di terminal -->
-![BMI](./screenshots/bmi.png)
-![Nilai Mahasiswa](./screenshots/nilai.png)
-![Modul](./screenshots/modul.png)
+![Soal 1 - BMI](./screenshots/soal1_bmi.png)
+![Soal 2 - Nilai Mahasiswa](./screenshots/soal2_nilai.png)
+![Soal 3 - Modul Matematika](./screenshots/soal3_modul.png)
 
 ## Komentar dan Docstring
 
