@@ -29,9 +29,15 @@ npm test
 
 ## Screenshot Antarmuka
 
-<!-- Tambahkan screenshot aplikasi di sini -->
-![Screenshot Home](./screenshots/home.png)
-![Screenshot Stats](./screenshots/stats.png)
+### Halaman Beranda
+Menampilkan form tambah buku, filter status, pencarian, serta daftar buku.
+
+![Screenshot Halaman Beranda](./screenshots/home.png)
+
+### Halaman Statistik
+Menampilkan ringkasan total buku, jumlah per status, dan jumlah buku per penulis.
+
+![Screenshot Halaman Statistik](./screenshots/stats.png)
 
 ## Fitur React yang Digunakan
 
