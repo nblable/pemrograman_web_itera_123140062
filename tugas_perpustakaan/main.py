@@ -46,7 +46,7 @@ if __name__ == "__main__":
 
     # 5. Demonstrasi peminjaman oleh member
     print("\n--- Peminjaman ---")
-    member = Member("M001", "Nabila Putri", "nabila@itera.ac.id")
+    member = Member("M001", "Nabila Ramadhani Mujahidin", "nabila@itera.ac.id")
     if member.pinjam_item(b1):
         print(f"{member.nama} berhasil meminjam: {b1.judul}")
     else:
