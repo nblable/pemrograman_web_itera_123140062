@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mini POS - Kasir Toko Kampus | Nabila Ramadhani Mujahidin</title>
+  <meta name="description" content="Aplikasi Kasir & Keranjang Belanja Sederhana (Mini POS) - tugas Praktikum Pemrograman Web Pertemuan 1.">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <header class="app-header">
+    <div class="app-header__inner">
+      <div class="brand">
+        <span class="brand__mark" aria-hidden="true">POS</span>
+        <div class="brand__teks">
+          <h1 class="brand__nama">Kasir Toko Kampus</h1>
+          <p class="brand__sub">Aplikasi Kasir &amp; Keranjang Belanja Sederhana - Pertemuan 1</p>
+        </div>
+      </div>
+      <p class="app-header__meta">
+        <span class="chip" id="jumlah-item">0 item</span>
+        <span class="chip chip--outline">Kelas RA</span>
+      </p>
+    </div>
+  </header>
+
+  <main class="app">
+
+    <!-- ============ 1. FORM INPUT BARANG (inline) ============ -->
+    <section class="blok" aria-labelledby="judul-form">
+      <div class="blok__header">
+        <h2 class="blok__judul" id="judul-form">Input Barang</h2>
+        <p class="blok__sub">Nama, harga, lalu jumlah - barang langsung masuk keranjang.</p>
+      </div>
+
+      <form id="form-barang" class="form-grid" novalidate>
+        <div class="field">
+          <label for="nama-barang">Nama Barang</label>
+          <input type="text" id="nama-barang" name="namaBarang" placeholder="cth. Air Mineral"
+                 autocomplete="off" aria-describedby="error-nama">
+          <p class="error" id="error-nama" role="alert" hidden></p>
+        </div>
+
+        <div class="field">
+          <label for="harga-satuan">Harga Satuan (Rp)</label>
+          <input type="number" id="harga-satuan" name="hargaSatuan" placeholder="cth. 4000"
+                 min="500" step="100" inputmode="numeric" aria-describedby="error-harga">
+          <p class="error" id="error-harga" role="alert" hidden></p>
+        </div>
+
+        <div class="field field--qty">
+          <label for="jumlah">Qty</label>
+          <input type="number" id="jumlah" name="jumlah" placeholder="cth. 3"
+                 min="1" step="1" inputmode="numeric" aria-describedby="error-jumlah">
+          <p class="error" id="error-jumlah" role="alert" hidden></p>
+        </div>
+
+        <button type="submit" class="btn btn--utama">Tambah</button>
+      </form>
+
+      <p class="form-status" id="form-status" role="status"></p>
+
+      <p class="catatan">
+        Aturan: nama minimal 3 karakter, harga minimal Rp 500, dan jumlah bulat minimal 1.
+        Data tidak valid tidak akan masuk keranjang.
+      </p>
+    </section>
+
+    <!-- ============ 2. TABEL KERANJANG ============ -->
+    <section class="blok" aria-labelledby="judul-keranjang">
+      <div class="blok__header">
+        <h2 class="blok__judul" id="judul-keranjang">Daftar Keranjang</h2>
+        <p class="blok__sub">Tersimpan otomatis di localStorage - aman saat halaman di-refresh.</p>
+      </div>
+
+      <div class="tabel-bungkus">
+        <table class="tabel">
+          <thead>
+            <tr>
+              <th scope="col" class="kolom-no">No</th>
+              <th scope="col" class="kolom-nama">Nama Barang</th>
+              <th scope="col" class="kolom-angka">Harga Satuan</th>
+              <th scope="col" class="kolom-angka">Qty</th>
+              <th scope="col" class="kolom-angka">Subtotal</th>
+              <th scope="col" class="kolom-aksi">Aksi</th>
+            </tr>
+          </thead>
+          <tbody id="daftar-keranjang"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ============ 3. PROMO, PEMBAYARAN & NOTA ============ -->
+    <section class="blok" aria-labelledby="judul-bayar">
+      <div class="blok__header">
+        <h2 class="blok__judul" id="judul-bayar">Pembayaran</h2>
+        <p class="blok__sub">Diskon 10% otomatis jika total belanja mencapai Rp 50.000.</p>
+      </div>
+
+      <div class="bayar-grid">
+        <div class="bayar-kiri">
+          <div class="field">
+            <label for="kode-promo">Kode Promo</label>
+            <div class="promo-baris">
+              <input type="text" id="kode-promo" placeholder="cth. HEMAT10"
+                     autocomplete="off" aria-describedby="error-promo info-promo">
+              <button type="button" class="btn btn--garis" id="btn-promo">Terapkan</button>
+            </div>
+            <p class="error" id="error-promo" role="alert" hidden></p>
+            <p class="info" id="info-promo"></p>
+          </div>
+
+          <div class="field">
+            <label for="uang-bayar">Uang Bayar (Rp)</label>
+            <input type="number" id="uang-bayar" placeholder="cth. 100000"
+                   min="0" step="500" inputmode="numeric" aria-describedby="status-pembayaran">
+          </div>
+
+          <p class="pembayaran" id="status-pembayaran" role="status">Belum ada pembayaran.</p>
+        </div>
+
+        <div class="nota" aria-label="Ringkasan belanja">
+          <h3 class="nota__judul">Ringkasan Belanja</h3>
+
+          <dl class="nota__isi">
+            <div class="nota__baris">
+              <dt>Total Belanja</dt>
+              <dd id="total-belanja">Rp 0</dd>
+            </div>
+            <div class="nota__baris nota__baris--diskon">
+              <dt>Diskon <span class="nota__ket" id="diskon-keterangan"></span></dt>
+              <dd id="diskon">Rp 0</dd>
+            </div>
+            <div class="nota__baris nota__baris--total">
+              <dt>Total Akhir</dt>
+              <dd id="total-akhir">Rp 0</dd>
+            </div>
+          </dl>
+
+          <button type="button" class="btn btn--reset btn--blok" id="btn-transaksi-baru">
+            Transaksi Baru / Reset
+          </button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="app-footer">
+    <p>Mini POS Sederhana | Tugas Pertemuan 1 - Nabila Ramadhani Mujahidin (123140062)</p>
+  </footer>
+
+</body>
+</html>
