@@ -2,7 +2,7 @@
 ## Python Object-Oriented Programming (OOP)
 
 ### Identitas Mahasiswa
-- Nama Lengkap: Nabila Putri
+- Nama Lengkap: Nabila Ramadhani Mujahidin
 - NIM: 123140062
 - Kelas Praktikum: RA
 
