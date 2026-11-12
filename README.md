@@ -38,7 +38,8 @@ Nabila_123140062_pertemuan5/
 |   |-- library_item.py
 |   |-- member.py
 |   |-- library.py
-|   `-- main.py
+|   |-- main.py
+|   `-- output.txt
 |-- README.md
 `-- .gitignore
 ```
@@ -57,13 +58,56 @@ python main.py
 ```
 
 ### Screenshot Output
-Tangkapan layar terminal saat program dijalankan terlampir pada laporan praktikum.
-Contoh output utama dapat dilihat pada hasil eksekusi `python main.py`.
+Tangkapan layar terminal saat program dijalankan (fitur penambahan, pencarian,
+dan penampilan katalog) tersimpan pada berkas `tugas_perpustakaan/output.txt`.
+
+Contoh output utama (`python main.py`):
 ```
+Item 'Pemrograman Web dengan Python' berhasil ditambahkan ke perpustakaan.
+Item 'Struktur Data dan Algoritma' berhasil ditambahkan ke perpustakaan.
+Item 'InfoTeknologi' berhasil ditambahkan ke perpustakaan.
+Item 'Sains Populer' berhasil ditambahkan ke perpustakaan.
+Item dengan ID 'B001' sudah ada di koleksi.
 
-Now git init and commit one file at a time. The user said "commit nya 1 persatu file". I'll init repo, then add files one by one with simple commit messages (junior developer style). Let me do it.
+===== KATALOG PERPUSTAKAAN ITERA =====
+[B001] Pemrograman Web dengan Python (2024) - Tersedia
+   Buku: Pemrograman Web dengan Python | Pengarang: Ahmad Fadhil | ISBN: 978-1234567890 | Halaman: 320 | Tahun: 2024
+[B002] Struktur Data dan Algoritma (2023) - Tersedia
+   Buku: Struktur Data dan Algoritma | Pengarang: Siti Rahma | ISBN: 978-0987654321 | Halaman: 450 | Tahun: 2023
+[M001] InfoTeknologi (2025) - Tersedia
+   Majalah: InfoTeknologi | Edisi: Edisi 12 | Penerbit: ITERA Press | Tahun: 2025
+[M002] Sains Populer (2024) - Tersedia
+   Majalah: Sains Populer | Edisi: Edisi 5 | Penerbit: Sains Indonesia | Tahun: 2024
 
-Order: maybe create files already done. Now git init. Then commit each file individually. I'll commit in a logical order. Use simple Indonesian messages.
+Total item di perpustakaan: 4
 
-Let me init.<|end|><|start|>start to=shell<|channel|>analysis <|constrain|>xml<|message|><rfl:parameter name="command">
-cd "D:\SEMESTER 7\PAW\Praktikum\Nabila_123140062_pertemuan5"; git init; git config user.name "Nabila Putri"; git config user.email "nabila@itera.ac.id"
+--- Pencarian Item ---
+Ditemukan (by ID): Buku: Struktur Data dan Algoritma | Pengarang: Siti Rahma | ISBN: 978-0987654321 | Halaman: 450 | Tahun: 2023
+Hasil pencarian judul 'python':
+ - [B001] Pemrograman Web dengan Python (2024) - Tersedia
+
+--- Peminjaman ---
+Nabila Ramadhani Mujahidin berhasil meminjam: Pemrograman Web dengan Python
+Item 'Pemrograman Web dengan Python' sedang dipinjam, tidak bisa dipinjam lagi.
+Member[M001] Nabila Ramadhani Mujahidin (nabila@itera.ac.id) - Pinjam: 1 item
+Daftar pinjam member: ['B001']
+
+--- Item yang Tersedia ---
+[B002] Struktur Data dan Algoritma (2023) - Tersedia
+[M001] InfoTeknologi (2025) - Tersedia
+[M002] Sains Populer (2024) - Tersedia
+
+--- Pengembalian ---
+Nabila Ramadhani Mujahidin berhasil mengembalikan: Pemrograman Web dengan Python
+Member[M001] Nabila Ramadhani Mujahidin (nabila@itera.ac.id) - Pinjam: 0 item
+
+--- Perhitungan Denda (Polymorphism) ---
+Pemrograman Web dengan Python: denda 5 hari = Rp 10,000
+Struktur Data dan Algoritma: denda 5 hari = Rp 10,000
+InfoTeknologi: denda 5 hari = Rp 5,000
+Total denda semua item (5 hari): Rp 30,000
+
+--- Uji Property Setter ---
+Validasi email: Format email tidak valid!
+Email member sekarang: nabila.baru@itera.ac.id
+```
