@@ -1,0 +1,13 @@
+.book-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.empty-state {
+  text-align: center;
+  color: #64748b;
+  padding: 2rem;
+  background-color: white;
+  border-radius: 8px;
+  border: 1px dashed #cbd5e1;
+}
