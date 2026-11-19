@@ -1,53 +1,66 @@
+# ===================================================
+# Berkas: tugas2_nilai_mahasiswa.py
+# Deskripsi: Program pengelolaan data nilai mahasiswa
+# ===================================================
+
 """Program pengelolaan data nilai mahasiswa.
 
 Menghitung nilai akhir berdasarkan bobot UTS, UAS, dan Tugas,
-menentukan grade, menampilkan tabel, serta mencari nilai tertinggi
-dan terendah.
+menentukan grade, serta menampilkan mahasiswa dengan nilai
+tertinggi dan terendah.
 """
 
 
-def hitung_nilai_akhir(nilai_uts: float, nilai_uas: float, nilai_tugas: float) -> float:
-    """Menghitung nilai akhir dengan bobot 30% UTS, 40% UAS, 30% Tugas.
+def hitung_nilai_akhir(uts: float, uas: float, tugas: float) -> float:
+    """Menghitung nilai akhir mahasiswa.
+
+    Nilai Akhir = (30% * UTS) + (40% * UAS) + (30% * Tugas).
 
     Args:
-        nilai_uts: Nilai Ujian Tengah Semester.
-        nilai_uas: Nilai Ujian Akhir Semester.
-        nilai_tugas: Nilai tugas.
+        uts (float): Nilai UTS.
+        uas (float): Nilai UAS.
+        tugas (float): Nilai Tugas.
 
     Returns:
-        Nilai akhir (float).
+        float: Nilai akhir mahasiswa.
     """
-    return (0.30 * nilai_uts) + (0.40 * nilai_uas) + (0.30 * nilai_tugas)
+    return (0.30 * uts) + (0.40 * uas) + (0.30 * tugas)
 
 
 def tentukan_grade(nilai_akhir: float) -> str:
     """Menentukan grade berdasarkan nilai akhir.
 
     Args:
-        nilai_akhir: Nilai akhir mahasiswa.
+        nilai_akhir (float): Nilai akhir mahasiswa.
 
     Returns:
-        Grade (A, B, C, D, atau E).
+        str: Grade (A-E).
     """
     if nilai_akhir >= 80:
         return "A"
-    if nilai_akhir >= 70:
+    elif nilai_akhir >= 70:
         return "B"
-    if nilai_akhir >= 60:
+    elif nilai_akhir >= 60:
         return "C"
-    if nilai_akhir >= 50:
+    elif nilai_akhir >= 50:
         return "D"
-    return "E"
+    else:
+        return "E"
 
 
 def main() -> None:
-    """Fungsi utama program."""
+    """Fungsi utama program pengelolaan nilai mahasiswa."""
     data_mahasiswa = [
-        {"nama": "Andi Pratama", "nim": "123140001", "nilai_uts": 80, "nilai_uas": 85, "nilai_tugas": 90},
-        {"nama": "Budi Santoso", "nim": "123140002", "nilai_uts": 65, "nilai_uas": 70, "nilai_tugas": 75},
-        {"nama": "Citra Lestari", "nim": "123140003", "nilai_uts": 90, "nilai_uas": 95, "nilai_tugas": 88},
-        {"nama": "Dewi Anggraini", "nim": "123140004", "nilai_uts": 55, "nilai_uas": 60, "nilai_tugas": 58},
-        {"nama": "Eko Wijaya", "nim": "123140005", "nilai_uts": 72, "nilai_uas": 78, "nilai_tugas": 80},
+        {"nama": "Nabila", "nim": "123140062",
+         "nilai_uts": 85, "nilai_uas": 90, "nilai_tugas": 88},
+        {"nama": "Budi Santoso", "nim": "123140001",
+         "nilai_uts": 70, "nilai_uas": 75, "nilai_tugas": 68},
+        {"nama": "Siti Aminah", "nim": "123140002",
+         "nilai_uts": 92, "nilai_uas": 88, "nilai_tugas": 95},
+        {"nama": "Andi Wijaya", "nim": "123140003",
+         "nilai_uts": 55, "nilai_uas": 60, "nilai_tugas": 58},
+        {"nama": "Dewi Lestari", "nim": "123140004",
+         "nilai_uts": 40, "nilai_uas": 45, "nilai_tugas": 50},
     ]
 
     # Hitung nilai akhir dan grade untuk setiap mahasiswa
@@ -58,13 +71,14 @@ def main() -> None:
         mhs["grade"] = tentukan_grade(mhs["nilai_akhir"])
 
     # Tampilkan tabel
-    print("=== DATA NILAI MAHASISWA ===")
-    print(f"{'No':<4}{'Nama':<18}{'NIM':<12}{'UTS':<6}{'UAS':<6}{'Tugas':<8}{'Akhir':<8}{'Grade':<6}")
-    print("-" * 68)
-    for i, mhs in enumerate(data_mahasiswa, start=1):
+    print("--- DATA NILAI MAHASISWA ---")
+    header = f"{'No':<4}{'Nama':<16}{'NIM':<12}{'UTS':<6}{'UAS':<6}{'Tugas':<7}{'Akhir':<8}{'Grade':<6}"
+    print(header)
+    print("-" * len(header))
+    for idx, mhs in enumerate(data_mahasiswa, start=1):
         print(
-            f"{i:<4}{mhs['nama']:<18}{mhs['nim']:<12}"
-            f"{mhs['nilai_uts']:<6}{mhs['nilai_uas']:<6}{mhs['nilai_tugas']:<8}"
+            f"{idx:<4}{mhs['nama']:<16}{mhs['nim']:<12}"
+            f"{mhs['nilai_uts']:<6}{mhs['nilai_uas']:<6}{mhs['nilai_tugas']:<7}"
             f"{mhs['nilai_akhir']:<8.2f}{mhs['grade']:<6}"
         )
 
@@ -72,15 +86,17 @@ def main() -> None:
     tertinggi = max(data_mahasiswa, key=lambda m: m["nilai_akhir"])
     terendah = min(data_mahasiswa, key=lambda m: m["nilai_akhir"])
 
-    print("\n=== HASIL ANALISIS ===")
-    print(
-        f"Nilai tertinggi: {tertinggi['nama']} (NIM: {tertinggi['nim']}) "
-        f"-> {tertinggi['nilai_akhir']:.2f} (Grade {tertinggi['grade']})"
-    )
-    print(
-        f"Nilai terendah : {terendah['nama']} (NIM: {terendah['nim']}) "
-        f"-> {terendah['nilai_akhir']:.2f} (Grade {terendah['grade']})"
-    )
+    print("\n--- NILAI TERTINGGI ---")
+    print(f"Nama       : {tertinggi['nama']}")
+    print(f"NIM        : {tertinggi['nim']}")
+    print(f"Nilai Akhir: {tertinggi['nilai_akhir']:.2f}")
+    print(f"Grade      : {tertinggi['grade']}")
+
+    print("\n--- NILAI TERENDAH ---")
+    print(f"Nama       : {terendah['nama']}")
+    print(f"NIM        : {terendah['nim']}")
+    print(f"Nilai Akhir: {terendah['nilai_akhir']:.2f}")
+    print(f"Grade      : {terendah['grade']}")
 
 
 if __name__ == "__main__":
