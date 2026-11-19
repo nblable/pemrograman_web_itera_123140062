@@ -1,21 +1,24 @@
-# Tugas Praktikum Pertemuan 4 - Dasar Pemrograman Python
+# Praktikum Pemrograman Web - Pertemuan 4
 
 ## Identitas Mahasiswa
-
-- Nama: Nabila Ramadhani Mujahidin
-- NIM: 123140062
+- **Nama** : Nabila Ramadhani Mujahidin
+- **NIM**  : 123140062
 
 ## Deskripsi
+Repositori ini berisi tugas praktikum Pertemuan 4 (Python Dasar) yang mencakup
+variabel dan tipe data, struktur kendali, fungsi, struktur data koleksi, serta
+pembuatan modul kustom.
 
-Kumpulan program Python untuk tugas praktikum Pertemuan 4:
-1. `tugas1_bmi.py` - Penghitung BMI (Body Mass Index) dengan kategori.
-2. `tugas2_nilai_mahasiswa.py` - Pengelolaan data nilai mahasiswa (list of dict), nilai akhir, grade, tabel, dan analisis tertinggi/terendah.
-3. `math_operations.py` - Modul matematika (luas & keliling 3 bentuk geometri, konversi suhu, konstanta PI).
-4. `main.py` - Program utama yang mengimpor dan menggunakan `math_operations` dengan dua cara impor berbeda.
+## Struktur Berkas
+- `tugas1_bmi.py` : Program penghitung Body Mass Index (BMI) sederhana.
+- `tugas2_nilai_mahasiswa.py` : Program pengelolaan data nilai mahasiswa.
+- `math_operations.py` : Modul matematika (geometri dan konversi suhu).
+- `main.py` : Program utama yang menggunakan modul `math_operations`.
+- `.gitignore` : Daftar berkas/folder yang diabaikan Git.
 
-## Instruksi Menjalankan
-
-Pastikan Python 3.8+ terpasang. Buka terminal di folder project ini, lalu jalankan:
+## Cara Menjalankan
+Pastikan Python 3.8+ telah terpasang. Jalankan perintah berikut di terminal
+(dari dalam folder proyek):
 
 ```bash
 python tugas1_bmi.py
@@ -23,15 +26,10 @@ python tugas2_nilai_mahasiswa.py
 python main.py
 ```
 
-(Untuk menguji modul secara mandiri: `python math_operations.py`)
+Pada beberapa sistem, gunakan `python3` sebagai pengganti `python`.
 
-## Screenshot Eksekusi
-
-<!-- Tambahkan screenshot hasil eksekusi program di terminal -->
-![Soal 1 - BMI](./screenshots/soal1_bmi.png)
-![Soal 2 - Nilai Mahasiswa](./screenshots/soal2_nilai.png)
-![Soal 3 - Modul Matematika](./screenshots/soal3_modul.png)
-
-## Komentar dan Docstring
-
-Setiap fungsi dilengkapi docstring yang menjelaskan parameter dan nilai kembaliannya. Kode mengikuti konvensi PEP 8 (indentasi 4 spasi, penamaan snake_case).
+## Screenshot Hasil Eksekusi
+![Soal 1 - BMI](screenshots/soal1_bmi.png)
+![Soal 2 - Nilai Mahasiswa](screenshots/soal2_nilai.png)
+![Soal 3 - Modul Matematika](screenshots/soal3_modul.png)
+"""
