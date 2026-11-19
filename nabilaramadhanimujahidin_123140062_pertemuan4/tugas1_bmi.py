@@ -1,62 +1,59 @@
-"""Program penghitung Body Mass Index (BMI) sederhana.
+# ===================================================
+# Berkas: tugas1_bmi.py
+# Deskripsi: Program penghitung Body Mass Index (BMI) sederhana
+# ===================================================
 
-Menghitung nilai BMI dari berat dan tinggi badan, lalu menentukan
-kategori status berat badan berdasarkan standar BMI.
+"""Program penghitung Body Mass Index (BMI).
+
+Menghitung nilai BMI berdasarkan berat badan (kg) dan tinggi badan (m),
+kemudian menentukan kategori status berat badan.
 """
 
 
 def hitung_bmi(berat_kg: float, tinggi_m: float) -> float:
-    """Menghitung nilai BMI.
+    """Menghitung nilai BMI menggunakan rumus berat / (tinggi * tinggi).
 
     Args:
-        berat_kg: Berat badan dalam kilogram.
-        tinggi_m: Tinggi badan dalam meter.
+        berat_kg (float): Berat badan dalam kilogram.
+        tinggi_m (float): Tinggi badan dalam meter.
 
     Returns:
-        Nilai BMI (float).
+        float: Nilai BMI yang dihitung.
     """
-    if tinggi_m <= 0:
-        raise ValueError("Tinggi badan harus lebih dari 0.")
     return berat_kg / (tinggi_m * tinggi_m)
 
 
 def kategori_bmi(bmi: float) -> str:
-    """Menentukan kategori BMI.
+    """Menentukan kategori status berat badan berdasarkan nilai BMI.
 
     Args:
-        bmi: Nilai BMI yang sudah dihitung.
+        bmi (float): Nilai BMI yang telah dihitung.
 
     Returns:
-        String kategori status berat badan.
+        str: Kategori status berat badan.
     """
     if bmi < 18.5:
         return "Berat badan kurang"
-    if bmi < 25:
+    elif bmi < 25:
         return "Berat badan normal"
-    if bmi < 30:
+    elif bmi < 30:
         return "Berat badan berlebih"
-    return "Obesitas"
+    else:
+        return "Obesitas"
 
 
 def main() -> None:
-    """Fungsi utama program."""
-    print("=== PENGHITUNG BMI (BODY MASS INDEX) ===")
-    try:
-        berat = float(input("Masukkan berat badan (kg): "))
-        tinggi = float(input("Masukkan tinggi badan (m): "))
-    except ValueError:
-        print("Input tidak valid. Harap masukkan angka.")
-        return
+    """Fungsi utama program penghitung BMI."""
+    print("--- PROGRAM PENGHITUNG BMI ---")
+    berat_kg = float(input("Masukkan berat badan (kg) : "))
+    tinggi_m = float(input("Masukkan tinggi badan (m)  : "))
 
-    if berat <= 0 or tinggi <= 0:
-        print("Berat dan tinggi badan harus lebih dari 0.")
-        return
-
-    bmi = hitung_bmi(berat, tinggi)
+    bmi = hitung_bmi(berat_kg, tinggi_m)
     kategori = kategori_bmi(bmi)
 
-    print(f"\nBerat badan : {berat:.2f} kg")
-    print(f"Tinggi badan: {tinggi:.2f} m")
+    print("\n--- HASIL PERHITUNGAN ---")
+    print(f"Berat badan : {berat_kg:.2f} kg")
+    print(f"Tinggi badan: {tinggi_m:.2f} m")
     print(f"Nilai BMI   : {bmi:.2f}")
     print(f"Kategori    : {kategori}")
 
