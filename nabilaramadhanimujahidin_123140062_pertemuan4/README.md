@@ -32,4 +32,3 @@ Pada beberapa sistem, gunakan `python3` sebagai pengganti `python`.
 ![Soal 1 - BMI](screenshots/soal1_bmi.png)
 ![Soal 2 - Nilai Mahasiswa](screenshots/soal2_nilai.png)
 ![Soal 3 - Modul Matematika](screenshots/soal3_modul.png)
-"""
